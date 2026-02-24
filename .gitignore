@@ -29,6 +29,7 @@
 *.dylib
 
 # Executables
+./life
 *.exe
 *.out
 *.app
