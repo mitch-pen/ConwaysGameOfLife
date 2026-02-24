@@ -120,7 +120,7 @@ OMP_NUM_THREADS=4 mpiexec -np 2 ./my_life 1000 1000 50 42 0
 
 ## Performance Data
 
-### Grid: 1000 × 1000
+### Grid: 1000 × 1000 with 200 Generations
 
 | OpenMP Threads | MPI Processes | Time (s) |
 |----------------|---------------|-----------|
@@ -151,6 +151,17 @@ OMP_NUM_THREADS=4 mpiexec -np 2 ./my_life 1000 1000 50 42 0
 ![4000 x 4000 Runtime Data](images/4000x4000.png "4000 x 4000 Runtime Data")
 
 As seen in the performance data, generally as the number of processes increases the runtime decreases in a decaying exponential trend.
+
+### 10000 x 10000 with 500 Generations
+
+Increasing the number of rows and columns was noted to have a more profound effect on the overall effectiveness of the parallel workers.
+
+| OpenMP Threads | MPI Processes | Time (s) |
+|----------------|---------------|-----------|
+| 1              | 1             | 405.227    |
+| 4              | 2             | 55.470     |
+
+With 10000 rows and columns and 500 generations the program's runtime had decreased by **630%**.
 
 > These measurements were taken using **WSL2 on Windows 11** using 10 Core Intel i7-13620H
 
